@@ -1,0 +1,18 @@
+#######################################
+# Syntax Coloring Map
+#######################################
+#######################################
+# Class (KEYWORD3)
+#######################################
+
+Hebobot                 KEYWORD3
+Hebocontroller          KEYWORD3
+
+#######################################
+# Methods (KEYWORD2)
+#######################################
+
+Hebobot::init	        KEYWORD2
+Hebobot::drive	        KEYWORD2
+Hebocontroller::init	KEYWORD2
+Hebocontroller::poll	KEYWORD2
