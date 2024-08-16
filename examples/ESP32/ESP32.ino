@@ -1,4 +1,4 @@
-#include <hebocontroller.h>
+#include <Hebocontroller.h>
 
 Hebobot hebobot("hebobot #1", 115200);
 Hebocontroller controller(hebobot);

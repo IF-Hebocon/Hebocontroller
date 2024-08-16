@@ -1,4 +1,4 @@
-#include <hebocontroller.h>
+#include <Hebocontroller.h>
 
 /**
 * Der ArduinoBLE wird noch nicht unterstützt
