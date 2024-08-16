@@ -1,11 +1,10 @@
 # Hebocontroller
 
-## installation mit PowerShell
-1. Projekt Klonen
-2. ```powershell
-    "src/", "examples/", "keywords.txt", "library.properties" | ForEach-Object { cp -r $($_) "build\$($_)" }
-    ```
-3. ```powershell
-   Compress-Archive Hebocontroller -DestinationPath Hebocontroller.zip
-   ```
-4. Zip als Library in der ArduinoIDE hinzufügen. 
+## Installation
+1. In GitHub Releases auswählen -> [Releases](https://github.com/IF-Hebocon/Hebocontroller/releases)
+2. Die Version auswählen
+3. Den Anhang hebocontroller.zip herunterladen
+4. Zip als Library in der ArduinoIDE hinzufügen: _Sketch -> Include Library -> Add .ZIP Library..._
+
+# Beispiele 
+In der Arduino IDE kann das Beispielskript über den Menüpunkt _File -> Examples -> Hebocontroller_ geladen werden
