@@ -5,16 +5,16 @@
 # Class (KEYWORD3)
 #######################################
 
-Hebobot                 KEYWORD3
-Hebocontroller          KEYWORD3
-Giantocontroller        KEYWORD3
+Hebobot         KEYWORD3
+Hebocontroller  KEYWORD3
+Giantocon       KEYWORD3
 
 #######################################
 # Methods (KEYWORD2)
 #######################################
 
-Hebobot::init	            KEYWORD2
-Hebobot::drive	            KEYWORD2
-Hebocontroller::init	    KEYWORD2
-Hebocontroller::poll	    KEYWORD2
-Giantocontroller::control	KEYWORD2
+Hebobot::init	        KEYWORD2
+Hebobot::drive	        KEYWORD2
+Hebocontroller::init	KEYWORD2
+Hebocontroller::poll    KEYWORD2
+Giantocon::control	    KEYWORD2

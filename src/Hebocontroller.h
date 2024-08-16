@@ -2,8 +2,8 @@
 #define HEBOCONTROLLER_H
 
 #if !defined(ARDUINO_NODEMCU_32S)
-#error "This Library only works with 'Arduino NodeMCU 32S' Boards"
-#endif /* !defined(ARDUINO_NODEMCU_32S) */
+#error "This Library only works with 'Arduino NodeMCU 32s' Boards"
+#else
 
 #include <Arduino.h>
 #include <BLEDevice.h>
@@ -39,4 +39,5 @@ class Hebocontroller {
         BLEService *_bleService;
         BLECharacteristic *_bleCharacteristic;
 };
+#endif /* !defined(ARDUINO_NODEMCU_32S) */
 #endif /* HEBOCONTROLLER_H */

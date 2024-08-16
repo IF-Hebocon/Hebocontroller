@@ -1,3 +1,4 @@
+#if defined(ARDUINO_NODEMCU_32S)
 #include <Hebocontroller.h>
 
 /* Hebobot */
@@ -69,3 +70,4 @@ void Hebocontroller::poll() {
         _hebobot.drive(value);
     }
 }
+#endif /* defined(ARDUINO_NODEMCU_32S) */

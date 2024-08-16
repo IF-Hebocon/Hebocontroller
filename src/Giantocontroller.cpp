@@ -1,6 +1,7 @@
-#include <Giantocontroller.h>
+#if defined(ARDUINO_ARDUINO_NANO33BLE)
+#include "Giantocontroller.h"
 
-Giantocontroller::Giantocontroller(int in1Pin, int in2Pin, int an1Pin, int an2Pin) {
+Giantocon::Giantocon(int in1Pin, int in2Pin, int an1Pin, int an2Pin) {
     _an1Pin = an1Pin;
     _an2Pin = an2Pin;
     _in1Pin = in1Pin;
@@ -12,7 +13,7 @@ Giantocontroller::Giantocontroller(int in1Pin, int in2Pin, int an1Pin, int an2Pi
     pinMode(_in2Pin, OUTPUT);
 }
 
-void Giantocontroller::control(signed int left, signed int right) {
+void Giantocon::control(signed int left, signed int right) {
     if (left >= 0) {
         if (left > 100) left = 100;
         left = left * 2.55;
@@ -39,3 +40,4 @@ void Giantocontroller::control(signed int left, signed int right) {
         digitalWrite(_in2Pin, LOW);
     }
 }
+#endif /* defined(ARDUINO_ARDUINO_NANO33BLE) */
