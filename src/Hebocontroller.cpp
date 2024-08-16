@@ -1,4 +1,4 @@
-#include "hebocontroller.h"
+#include <Hebocontroller.h>
 
 /* Hebobot */
 Hebobot::Hebobot(const String name, const unsigned long baudrate) : _baudrate(baudrate), name(name) { }
