@@ -1,5 +1,5 @@
 #if defined(ARDUINO_ARDUINO_NANO33BLE)
-#include "Giantocontroller.h"
+#include <Giantocontroller.h>
 
 Giantocon::Giantocon(int in1Pin, int in2Pin, int an1Pin, int an2Pin) {
     _an1Pin = an1Pin;
