@@ -4,7 +4,6 @@
 Hebobot::Hebobot(const String name, const unsigned long baudrate) : _baudrate(baudrate), name(name) { }
 
 void Hebobot::init() {
-    Serial.begin(_baudrate);
     pinMode(MOTOR_1B, OUTPUT);
     pinMode(MOTOR_2B, OUTPUT);
     pinMode(MOTOR_1F, OUTPUT);
@@ -13,35 +12,25 @@ void Hebobot::init() {
 
 void Hebobot::drive(const String value) {
     switch (value[0]) {
-        Serial.println(value[0]);
-        Serial.println("");
     case 'w' :
-        Serial.print("recognized value: ");
-        Serial.println("w");
         analogWrite(MOTOR_1B, 0);
         analogWrite(MOTOR_2B, 0);
         analogWrite(MOTOR_1F, SPEED);
         analogWrite(MOTOR_2F, SPEED);
         break;
     case 's' :
-        Serial.print("recognized value: ");
-        Serial.println("s");
         analogWrite(MOTOR_1B, SPEED);
         analogWrite(MOTOR_2B, SPEED);
         analogWrite(MOTOR_1F, 0);
         analogWrite(MOTOR_2F, 0);
         break;
     case 'a' :
-        Serial.print("recognized value: ");
-        Serial.println("a");
         analogWrite(MOTOR_1B, SPEED);
         analogWrite(MOTOR_2B, 0);
         analogWrite(MOTOR_1F, 0);
         analogWrite(MOTOR_2F, SPEED);
         break;
     case 'd' :
-        Serial.print("recognized value: ");
-        Serial.println("d");
         analogWrite(MOTOR_1B, 0);
         analogWrite(MOTOR_2B, SPEED);
         analogWrite(MOTOR_1F, SPEED);
