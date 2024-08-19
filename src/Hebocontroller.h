@@ -10,6 +10,10 @@
 #include <BLEUtils.h>
 #include <BLEServer.h>
 
+#ifdef PLATFORMIO
+#include <string>
+#endif
+
 #define SERVICE_UUID        "19B10000-E8F2-537E-4F6C-D104768A1214"
 #define CHARACTERISTIC_UUID "19B10001-E8F2-537E-4F6C-D104768A1214"
 #define MOTOR_1B 32

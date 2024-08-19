@@ -50,7 +50,11 @@ void Hebobot::drive(const String value) {
 Hebocontroller::Hebocontroller(Hebobot hebobot) : _hebobot(hebobot) { }
 
 void Hebocontroller::init() {
-    BLEDevice::init(_hebobot.name);
+    #ifdef PLATFORMIO
+        BLEDevice::init(std::string(_hebobot.name.c_str()));
+    #else
+        BLEDevice::init(_hebobot.name);
+    #endif
     _bleServer         = BLEDevice::createServer();
     _bleService        = _bleServer->createService(SERVICE_UUID);
     _bleCharacteristic = _bleService->createCharacteristic(CHARACTERISTIC_UUID, BLECharacteristic::PROPERTY_READ);
@@ -66,7 +70,11 @@ void Hebocontroller::init() {
 
 void Hebocontroller::poll() {
     if (_bleServer->getConnectedCount() > 0) {
-        String value = _bleCharacteristic->getValue();
+        #ifdef PLATFORMIO
+            String value = String(_bleCharacteristic->getValue().c_str());
+        #else
+            String value = _bleCharacteristic->getValue();
+        #endif
         _hebobot.drive(value);
     }
 }
