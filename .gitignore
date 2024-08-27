@@ -1,2 +1,4 @@
-cmake-build-debug
 .idea
+.venv
+cmake-build-debug*
+build
