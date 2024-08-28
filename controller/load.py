@@ -3,9 +3,9 @@ import sys
 from asyncio import AbstractEventLoop
 from sys import argv
 
-import controller
+import keyboard
 from bleak import BleakScanner, BleakClient, BleakGATTCharacteristic, BLEDevice
-from controller import KeyboardEvent
+from keyboard import KeyboardEvent
 
 
 class Keyboard:
@@ -19,17 +19,17 @@ class Keyboard:
         self._current_key = ' '
         self.device_number = device_number
 
-        controller.hook_key('w', self._key_hook)
-        controller.hook_key('a', self._key_hook)
-        controller.hook_key('s', self._key_hook)
-        controller.hook_key('d', self._key_hook)
-        controller.hook_key('esc', lambda _: sys.exit(0))
+        keyboard.hook_key('w', self._key_hook)
+        keyboard.hook_key('a', self._key_hook)
+        keyboard.hook_key('s', self._key_hook)
+        keyboard.hook_key('d', self._key_hook)
+        keyboard.hook_key('esc', lambda _: sys.exit(0))
 
     def _key_hook(self, event: KeyboardEvent):
-        if event.event_type == controller.KEY_DOWN and event.name not in self._keys:
+        if event.event_type == keyboard.KEY_DOWN and event.name not in self._keys:
             self._keys.append(event.name)
             self._current_key = event.name
-        if event.event_type == controller.KEY_UP and event.name in self._keys:
+        if event.event_type == keyboard.KEY_UP and event.name in self._keys:
             self._keys.remove(event.name)
 
             if len(self._keys) == 0:
@@ -66,7 +66,7 @@ class Keyboard:
 
 
 def main():
-    if len(argv) <= 2:
+    if len(argv) < 2:
         print("Please specify service and characteristic uuid as cli parameters")
         return
     loop = asyncio.new_event_loop()
